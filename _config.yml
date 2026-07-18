@@ -9,7 +9,7 @@ url: "https://eatanchovieseveryday.com"
 # line below and make it match your repo name EXACTLY (keep the leading slash).
 # Without this, the site loads but the styling will look broken.
 # Once your custom domain is connected, comment this line out again.
-# baseurl: "/eae"
+baseurl: "/eae"
 
 # ── The lessons "collection" ──────────────────────────────────
 # This is the piece that lets ONE template render all 61 lessons.
