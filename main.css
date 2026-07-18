@@ -1,0 +1,88 @@
+/* ============================================================
+   EAT ANCHOVIES EVERY DAY — provisional styles
+   This is a plain, tidy foundation, NOT the final design.
+   Every colour, font, and size lives in the variables below,
+   so when we do the real design pass (pill-tags, palette,
+   type), we change them in ONE place.
+   ============================================================ */
+
+:root {
+  /* Colours — placeholders, meant to be replaced */
+  --ink:        #1a1a1a;   /* body text */
+  --paper:      #ffffff;   /* background */
+  --muted:      #6b6b6b;   /* secondary text */
+  --line:       #e6e6e6;   /* hairlines / borders */
+  --accent:     #2b5f6b;   /* links & chips — a single restrained accent */
+
+  /* Type — provisional system stack, swappable later */
+  --font-body:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+
+  /* Spacing */
+  --measure: 42rem;        /* comfortable reading width */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.site-header { padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.site-title  { font-family: var(--font-display); font-size: 1.15rem; text-decoration: none; color: var(--ink); }
+.site-main   { padding-block: 2.5rem; }
+.site-footer { padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+
+/* ── Lesson page ─────────────────────────────────────────── */
+.lesson-number { color: var(--muted); font-size: 0.9rem; letter-spacing: 0.03em; margin: 0 0 0.25rem; }
+.lesson-title  { font-family: var(--font-display); font-size: 2rem; line-height: 1.15; margin: 0 0 1.5rem; }
+.lesson-image  { display: block; max-width: 100%; height: auto; margin: 0 auto 2rem; }
+.lesson-body p { margin: 0 0 1.25rem; }
+
+/* ── The three links (future pill-tags) ──────────────────── */
+.lesson-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 2rem 0; }
+.chip {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;              /* pill shape, ready for the design pass */
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.chip:hover { border-color: var(--accent); }
+
+.lesson-back { margin-top: 2.5rem; }
+.lesson-back a,
+.lesson-body a { color: var(--accent); }
+
+/* ── Homepage index ──────────────────────────────────────── */
+.home-intro { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.4; margin-bottom: 2.5rem; }
+.lesson-index { list-style: none; margin: 0; padding: 0; }
+.lesson-index-item a {
+  display: flex;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+.lesson-index-item a:hover .lesson-index-title { color: var(--accent); }
+.lesson-index-number { color: var(--muted); min-width: 2rem; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ── Baseline quality: respect reduced motion, visible focus ─ */
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
