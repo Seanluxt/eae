@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="home-intro">
+  <p>Sixty lessons, plus one. Each paired with a song, an artwork, and something to explore.</p>
+</section>
+
+<ul class="lesson-index">
+  {% assign ordered = site.lessons | sort: "number" %}
+  {% for lesson in ordered %}
+    <li class="lesson-index-item">
+      <a href="{{ lesson.url | relative_url }}">
+        <span class="lesson-index-number">{{ lesson.number }}</span>
+        <span class="lesson-index-title">{{ lesson.title }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

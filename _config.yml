@@ -1,0 +1,33 @@
+# ── Site settings ─────────────────────────────────────────────
+title: Eat Anchovies Every Day
+description: Sixty lessons (plus one), each paired with a song, an artwork, and something to explore.
+# When your domain is live, put it here. Until then this can stay blank.
+url: "https://eatanchovieseveryday.com"
+
+# IMPORTANT for first launch (before your custom domain is connected):
+# If your site lives at  seanluxt.github.io/REPO-NAME  then uncomment the
+# line below and make it match your repo name EXACTLY (keep the leading slash).
+# Without this, the site loads but the styling will look broken.
+# Once your custom domain is connected, comment this line out again.
+# baseurl: "/eae"
+
+# ── The lessons "collection" ──────────────────────────────────
+# This is the piece that lets ONE template render all 61 lessons.
+# Every .md file in the _lessons/ folder becomes its own web page.
+collections:
+  lessons:
+    output: true
+    permalink: /lessons/:path/     # e.g. /lessons/eat-anchovies-every-day/
+
+# ── Defaults ──────────────────────────────────────────────────
+# So you never have to write "layout: lesson" at the top of all 61 files —
+# every file in _lessons/ automatically uses the lesson template.
+defaults:
+  - scope:
+      path: ""
+      type: lessons
+    values:
+      layout: lesson
+
+# ── Build settings ────────────────────────────────────────────
+markdown: kramdown
