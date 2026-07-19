@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="lesson">
+  <p class="lesson-number">Lesson {{ page.number }} of 61</p>
+  <h1 class="lesson-title">{{ page.title }}</h1>
+
+  {% if page.image.src %}
+    <img class="lesson-image" src="{{ '/images/' | append: page.image.src | relative_url }}" alt="{{ page.image.alt }}">
+  {% endif %}
+
+  <div class="lesson-body">
+    {{ content }}
+  </div>
+
+  <nav class="lesson-links" aria-label="Song, art, and something to explore">
+    {% if page.song.url %}<a class="chip" href="{{ page.song.url }}">{{ page.song.label }}</a>{% endif %}
+    {% if page.art.url %}<a class="chip" href="{{ page.art.url }}">{{ page.art.label }}</a>{% endif %}
+    {% if page.explore.url %}<a class="chip" href="{{ page.explore.url }}">{{ page.explore.label }}</a>{% endif %}
+  </nav>
+
+  <p class="lesson-back"><a href="{{ '/' | relative_url }}">← All lessons</a></p>
+</article>
