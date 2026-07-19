@@ -4,18 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <style>
+    :root{
+      --ink:#1a1a1a; --paper:#fff; --muted:#6b6b6b; --line:#e6e6e6; --accent:#2b5f6b;
+      --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      --font-display:Georgia,"Times New Roman",serif; --measure:42rem;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:1.125rem;line-height:1.6}
+    .site-header,.site-main,.site-footer{max-width:var(--measure);margin-inline:auto;padding-inline:1.25rem}
+    .site-header{padding-block:1.5rem;border-bottom:1px solid var(--line)}
+    .site-title{font-family:var(--font-display);font-size:1.15rem;text-decoration:none;color:var(--ink)}
+    .site-main{padding-block:2.5rem}
+    .site-footer{padding-block:2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+    .lesson-number{color:var(--muted);font-size:.9rem;margin:0 0 .25rem}
+    .lesson-title{font-family:var(--font-display);font-size:2rem;line-height:1.15;margin:0 0 1.5rem}
+    .lesson-image{display:block;max-width:100%;height:auto;margin:0 auto 2rem}
+    .lesson-body p{margin:0 0 1.25rem}
+    .lesson-links{display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0}
+    .chip{display:inline-block;padding:.4rem .9rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--accent);font-size:.95rem}
+    .chip:hover{border-color:var(--accent)}
+    .lesson-back{margin-top:2.5rem}
+    .lesson-back a,.lesson-body a{color:var(--accent)}
+    .home-intro{font-family:var(--font-display);font-size:1.35rem;line-height:1.4;margin-bottom:2.5rem}
+    .lesson-index{list-style:none;margin:0;padding:0}
+    .lesson-index-item a{display:flex;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+    .lesson-index-item a:hover .lesson-index-title{color:var(--accent)}
+    .lesson-index-number{color:var(--muted);min-width:2rem;text-align:right}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  </style>
 </head>
 <body>
   <header class="site-header">
     <a class="site-title" href="{{ '/' | relative_url }}">Eat Anchovies Every Day</a>
   </header>
-
   <main class="site-main">
     {{ content }}
   </main>
-
   <footer class="site-footer">
     <p>Eat Anchovies Every Day — a personal project by Sean Luxton.</p>
   </footer>
